@@ -1,6 +1,0 @@
-framework module Pods_swift_cnode {
-  umbrella header "Pods-swift-cnode-umbrella.h"
-
-  export *
-  module * { export * }
-}
