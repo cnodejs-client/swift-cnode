@@ -88,7 +88,7 @@ class CommentListViewController: UITableViewController, UIWebViewDelegate {
         }
         self.refreshing = true
         API.getTopicDetail(self.topicId, mdrender: "true", error: { err in
-            Toast(err)
+            showToast(err)
             self.refreshControl!.endRefreshing()
             self.refreshing = false
         }, success: { _topic in

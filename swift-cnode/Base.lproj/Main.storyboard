@@ -22,32 +22,35 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="qLZ-BK-joq">
-                                            <rect key="frame" x="14" y="11" width="48" height="48"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="置顶 • nswbmw • 12分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-QQ-Iyi">
+                                            <rect key="frame" x="75" y="38" width="474" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WX-8T-pay">
+                                            <rect key="frame" x="75" y="8" width="474" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="qLZ-BK-joq">
+                                            <rect key="frame" x="16" y="8" width="48" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="48" id="281-1e-Zv8"/>
                                                 <constraint firstAttribute="height" constant="48" id="8fE-he-5L7"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="置顶 • nswbmw • 12分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-QQ-Iyi">
-                                            <rect key="frame" x="75" y="38" width="507" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="这是标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WX-8T-pay">
-                                            <rect key="frame" x="75" y="11" width="507" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="4WX-8T-pay" secondAttribute="trailing" constant="10" id="B1V-f8-NzJ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ds6-QQ-Iyi" secondAttribute="trailing" constant="10" id="BAC-t5-VAN"/>
+                                        <constraint firstItem="qLZ-BK-joq" firstAttribute="top" secondItem="AKa-C9-4V8" secondAttribute="topMargin" id="E0W-dR-U0Z"/>
                                         <constraint firstItem="qLZ-BK-joq" firstAttribute="leading" secondItem="AKa-C9-4V8" secondAttribute="leadingMargin" constant="8" id="SKr-QP-0VV"/>
                                         <constraint firstItem="4WX-8T-pay" firstAttribute="leading" secondItem="qLZ-BK-joq" secondAttribute="trailing" constant="11" id="m9S-Yt-Uib"/>
                                         <constraint firstItem="ds6-QQ-Iyi" firstAttribute="leading" secondItem="qLZ-BK-joq" secondAttribute="trailing" constant="11" id="oFE-SU-aYf"/>
+                                        <constraint firstItem="ds6-QQ-Iyi" firstAttribute="top" secondItem="4WX-8T-pay" secondAttribute="bottom" constant="10" id="w79-PU-1jP"/>
+                                        <constraint firstItem="4WX-8T-pay" firstAttribute="top" secondItem="AKa-C9-4V8" secondAttribute="topMargin" id="x8w-XZ-k36"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -78,33 +81,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="这个是标题这个是标题这个是标题这个是标题这个是标题这个是标题" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOE-z5-0mc">
-                                <rect key="frame" x="20" y="34" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这个是标题这个是标题这个是标题这个是标题这个是标题这个是标题" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOE-z5-0mc">
+                                <rect key="frame" x="20" y="34" width="560" height="56"/>
                                 <fontDescription key="fontDescription" name="PingFangSC-Medium" family="PingFang SC" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-Rj-YFD">
-                                <rect key="frame" x="20" y="67" width="40" height="40"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="fFm-Rj-YFD">
+                                <rect key="frame" x="20" y="102" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="HOV-kJ-KBr"/>
                                     <constraint firstAttribute="width" constant="40" id="jqY-u3-rNs"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nswbmw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcR-ET-oS6">
-                                <rect key="frame" x="68" y="67" width="512" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nswbmw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcR-ET-oS6">
+                                <rect key="frame" x="67" y="102" width="513" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2016-04-04 11:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jv-HN-389">
-                                <rect key="frame" x="68" y="86" width="512" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-04 11:08" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jv-HN-389">
+                                <rect key="frame" x="68" y="126" width="512" height="14"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <webView contentMode="scaleToFill" misplaced="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-5k-UNw">
-                                <rect key="frame" x="20" y="121" width="560" height="229"/>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hd3-5k-UNw">
+                                <rect key="frame" x="20" y="154" width="560" height="446"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                             </webView>
                         </subviews>
@@ -177,43 +180,6 @@
             </objects>
             <point key="canvasLocation" x="-2560" y="-218"/>
         </scene>
-        <!--Main View Controller-->
-        <scene sceneID="fgx-ZE-RUj">
-            <objects>
-                <viewController id="9Pm-0k-wrP" customClass="MainViewController" customModule="CNode社区" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bsD-Te-Eok"/>
-                        <viewControllerLayoutGuide type="bottom" id="AEm-MR-s07"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UGg-Lh-xIL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="QHm-Sc-Yvv"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jKD-Wt-zfJ" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2560" y="661"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zrt-pI-DJx">
-            <objects>
-                <navigationController id="3Ek-7f-Zk2" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MnZ-91-Ex6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="9Pm-0k-wrP" kind="relationship" relationship="rootViewController" id="olO-WY-gxN"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ru-1D-AIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3480" y="661"/>
-        </scene>
         <!--CommentLists View Controller-->
         <scene sceneID="3NC-xI-oht">
             <objects>
@@ -237,18 +203,18 @@
                                                 <constraint firstAttribute="height" constant="38" id="dKk-ZH-dQW"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="nswbmw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reg-0H-3o3">
-                                            <rect key="frame" x="66" y="11" width="516" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nswbmw" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reg-0H-3o3">
+                                            <rect key="frame" x="66" y="11" width="516" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <webView tag="4" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j0e-Ew-4FJ">
-                                            <rect key="frame" x="66" y="62" width="516" height="74"/>
+                                        <webView tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0e-Ew-4FJ">
+                                            <rect key="frame" x="66" y="59" width="516" height="77"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                         </webView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="12分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8k-Re-wPT">
-                                            <rect key="frame" x="66" y="28" width="516" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8k-Re-wPT">
+                                            <rect key="frame" x="66" y="34" width="516" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>

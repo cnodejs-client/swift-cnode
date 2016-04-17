@@ -75,7 +75,7 @@ class TopicListsViewController: UITableViewController {
                 page = 0
             }
             API.getTopicList(page! + 1, tab: self.tab, error: { err in
-                Toast(err)
+                showToast(err)
                 self.loading = false
             }, success: { _topics in
                 if topics[self.tab] == nil {
@@ -105,7 +105,7 @@ class TopicListsViewController: UITableViewController {
         }
         self.refreshing = true
         API.getTopicList(tab: self.tab, error: { err in
-            Toast(err)
+            showToast(err)
             self.refreshControl!.endRefreshing()
             self.refreshing = false
         }, success: { _topics in
