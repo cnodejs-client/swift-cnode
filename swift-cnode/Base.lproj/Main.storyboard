@@ -72,7 +72,7 @@
         <!--Topic View Controller-->
         <scene sceneID="CBw-B9-Cwb">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kxZ-Nn-ShW" customClass="TopicViewController" customModule="CNode社区" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TopicVC" automaticallyAdjustsScrollViewInsets="NO" id="kxZ-Nn-ShW" customClass="TopicViewController" customModule="CNode社区" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DaV-im-dBc"/>
                         <viewControllerLayoutGuide type="bottom" id="TFm-aM-Gfb"/>
