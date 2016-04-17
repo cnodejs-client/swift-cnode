@@ -8,14 +8,18 @@
 
 import UIKit
 
-class CommentListViewController: UITableViewController, UIWebViewDelegate {
+class CommentListViewController: UITableViewController {
     
     var topicId: String!
     var topic: Topic?
     var refreshing = false
 
+    var webViewDelegate: ContentWebViewDelegate!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        webViewDelegate = ContentWebViewDelegate(self)
 
         // 下拉刷新
         self.refreshControl = UIRefreshControl()
@@ -52,7 +56,7 @@ class CommentListViewController: UITableViewController, UIWebViewDelegate {
         title.text = comment.author.loginname
         subtitle.text = Util.fromNow(comment.create_at)
         
-        commentWebView.delegate = self
+        commentWebView.delegate = webViewDelegate
         commentWebView.backgroundColor = UIColor.clearColor()
         commentWebView.opaque = false
         commentWebView.scrollView.showsVerticalScrollIndicator = false
@@ -88,7 +92,7 @@ class CommentListViewController: UITableViewController, UIWebViewDelegate {
         }
         self.refreshing = true
         API.getTopicDetail(self.topicId, mdrender: "true", error: { err in
-            Toast(err)
+            showToast(err)
             self.refreshControl!.endRefreshing()
             self.refreshing = false
         }, success: { _topic in

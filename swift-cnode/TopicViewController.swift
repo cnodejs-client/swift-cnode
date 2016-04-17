@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TopicViewController: UIViewController, UIWebViewDelegate, UIScrollViewDelegate {
+class TopicViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var topicTitle: UILabel!
     @IBOutlet weak var avatar: UIImageView!
@@ -17,10 +17,13 @@ class TopicViewController: UIViewController, UIWebViewDelegate, UIScrollViewDele
     @IBOutlet weak var contentWebView: UIWebView!
 
     var topic: Topic!
+    var webViewDelegate: ContentWebViewDelegate!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentWebView.delegate = self
+
+        webViewDelegate = ContentWebViewDelegate(self)
+        contentWebView.delegate = webViewDelegate
 
         topicTitle.text = topic.title
         avatar.kf_setImageWithURL(NSURL(string: topic.author.avatar_url)!)

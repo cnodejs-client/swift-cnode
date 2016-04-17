@@ -8,8 +8,6 @@
 
 import JLToast
 
-struct Toast {
-    init(_ str: String) {
-        JLToast.makeText(str, duration: 3).show()
-    }
+func showToast(str: String) {
+    JLToast.makeText(str, duration: 3).show()
 }

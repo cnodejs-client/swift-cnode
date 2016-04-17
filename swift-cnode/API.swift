@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class API {
     static let LIMIT = 20
-    static let BASE_URL = NSURL(string: "https://cnodejs.org")!
+    static let BASE_URL = NSURL(string: "https://cnodejs.org/")!
     static let API_URL = "https://cnodejs.org/api/v1"
     static let TOPIC_LIST_API_URL = API_URL + "/topics"
     static let TOPIC_DETAIL_API_URL = API_URL + "/topic"
