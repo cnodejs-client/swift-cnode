@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="DI9-RC-PAs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="commentCell" id="DI9-RC-PAs" customClass="CommentCell" customModule="CNode社区" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DI9-RC-PAs" id="gdB-QO-eVM">
@@ -210,7 +210,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <webView tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0e-Ew-4FJ">
-                                            <rect key="frame" x="66" y="59" width="516" height="77"/>
+                                            <rect key="frame" x="66" y="46" width="516" height="95"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                         </webView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8k-Re-wPT">
@@ -222,19 +222,25 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="j0e-Ew-4FJ" firstAttribute="leading" secondItem="gdB-QO-eVM" secondAttribute="leadingMargin" constant="58" id="6Z7-Ug-Lpm"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="j0e-Ew-4FJ" secondAttribute="bottom" constant="5" id="8ED-hn-CS5"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="j0e-Ew-4FJ" secondAttribute="bottom" id="8ED-hn-CS5"/>
                                         <constraint firstItem="E8k-Re-wPT" firstAttribute="leading" secondItem="0Qs-2L-Mq6" secondAttribute="trailing" constant="14" id="Gsv-sM-iGw"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="reg-0H-3o3" secondAttribute="trailing" constant="10" id="L93-rj-Vbu"/>
                                         <constraint firstItem="reg-0H-3o3" firstAttribute="leading" secondItem="0Qs-2L-Mq6" secondAttribute="trailing" constant="14" id="PIE-US-PlQ"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="E8k-Re-wPT" secondAttribute="trailing" constant="10" id="PZO-qa-iqH"/>
                                         <constraint firstItem="reg-0H-3o3" firstAttribute="top" secondItem="gdB-QO-eVM" secondAttribute="topMargin" constant="3" id="Umw-vZ-5VA"/>
-                                        <constraint firstItem="j0e-Ew-4FJ" firstAttribute="top" secondItem="E8k-Re-wPT" secondAttribute="bottom" constant="13" id="fEi-T7-IxB"/>
+                                        <constraint firstItem="j0e-Ew-4FJ" firstAttribute="top" secondItem="E8k-Re-wPT" secondAttribute="bottom" id="fEi-T7-IxB"/>
                                         <constraint firstItem="E8k-Re-wPT" firstAttribute="top" secondItem="reg-0H-3o3" secondAttribute="bottom" constant="6" id="fft-ZA-VDM"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="j0e-Ew-4FJ" secondAttribute="trailing" constant="10" id="nDX-T7-PVj"/>
                                         <constraint firstItem="0Qs-2L-Mq6" firstAttribute="leading" secondItem="gdB-QO-eVM" secondAttribute="leadingMargin" constant="6" id="oFy-F6-j7q"/>
                                         <constraint firstItem="0Qs-2L-Mq6" firstAttribute="top" secondItem="gdB-QO-eVM" secondAttribute="topMargin" constant="3" id="uv5-kh-oa1"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorLabel" destination="reg-0H-3o3" id="qc6-r6-lzR"/>
+                                    <outlet property="avatarImageView" destination="0Qs-2L-Mq6" id="bfh-7p-GcO"/>
+                                    <outlet property="contentWebView" destination="j0e-Ew-4FJ" id="iaQ-X9-p47"/>
+                                    <outlet property="timeLabel" destination="E8k-Re-wPT" id="KKQ-5S-GRd"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

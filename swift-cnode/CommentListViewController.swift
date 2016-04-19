@@ -8,18 +8,30 @@
 
 import UIKit
 
-class CommentListViewController: UITableViewController {
+class CommentListViewController: UITableViewController, UIWebViewDelegate {
     
     var topicId: String!
-    var topic: Topic?
+    var topic: Topic? {
+        didSet {
+            webContentHeights.removeAll()
+
+            for _ in (topic?.replies)! {
+                webContentHeights.append(0.0)
+            }
+        }
+    }
     var refreshing = false
 
     var webViewDelegate: ContentWebViewDelegate!
+    var webContentHeights: [CGFloat] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         webViewDelegate = ContentWebViewDelegate(self)
+
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 150
 
         // 下拉刷新
         self.refreshControl = UIRefreshControl()
@@ -34,35 +46,38 @@ class CommentListViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return topic?.replies?.count ?? 0
     }
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return webContentHeights[indexPath.row] + 60
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("commentCell")! as UITableViewCell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("commentCell")! as! CommentCell
         
         if topic?.replies == nil || (topic?.replies!.isEmpty)! {
             return cell
         }
 
-        let avatar = cell.viewWithTag(1) as! UIImageView
-        let title = cell.viewWithTag(2) as! UILabel
-        let subtitle = cell.viewWithTag(3) as! UILabel
-        let commentWebView = cell.viewWithTag(4) as! UIWebView
-
         let comments = Array(topic!.replies!.reverse())
         let comment = comments[indexPath.row]
-        
-        avatar.kf_setImageWithURL(NSURL(string: comment.author.avatar_url)!)
-        avatar.layer.masksToBounds = true
-        avatar.layer.cornerRadius = 5
-        title.text = comment.author.loginname
-        subtitle.text = Util.fromNow(comment.create_at)
-        
-        commentWebView.delegate = webViewDelegate
-        commentWebView.backgroundColor = UIColor.clearColor()
-        commentWebView.opaque = false
-        commentWebView.scrollView.showsVerticalScrollIndicator = false
-        commentWebView.scrollView.bounces = false
-        commentWebView.loadHTMLString(wrapContent(comment.content), baseURL: API.BASE_URL)
-        commentWebView.scrollView.delegate = self
+
+        cell.avatarImageView.kf_setImageWithURL(NSURL(string: comment.author.avatar_url)!)
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 5
+
+        cell.authorLabel.text = comment.author.loginname
+        cell.timeLabel.text = Util.fromNow(comment.create_at)
+
+        cell.contentWebView.delegate = self
+        cell.contentWebView.tag = indexPath.row
+        cell.contentWebView.backgroundColor = UIColor.clearColor()
+        cell.contentWebView.opaque = false
+        cell.contentWebView.scrollView.showsVerticalScrollIndicator = false
+        cell.contentWebView.scrollView.scrollEnabled = false
+        cell.contentWebView.scrollView.bounces = false
+
+        cell.contentWebView.loadHTMLString(wrapContent(comment.content), baseURL: API.BASE_URL)
+        cell.contentWebView.scrollView.delegate = self
 
         return cell
     }
@@ -105,5 +120,17 @@ class CommentListViewController: UITableViewController {
     
     func wrapContent(content: String) -> String {
         return "<!DOCTYPE html><html><head><meta name=\"viewport\" content=\"initial-scale=1, user-scalable=no, width=device-width\" /><style>html, body, div, p, img {width: 100%;word-break: break-all;word-wrap: break-word;} html, body { margin: 0; }</style></head><body>" + content + "</body></html>"
+    }
+
+    func webViewDidFinishLoad(webView: UIWebView) {
+        webView.delegate = webViewDelegate
+        if webContentHeights[webView.tag] != 0.0 {
+            return;
+        }
+
+        let heightStr = webView.stringByEvaluatingJavaScriptFromString("document.body.scrollHeight")
+        let height = CGFloat(Double(heightStr!)!)
+        webContentHeights[webView.tag] = height
+        self.tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: webView.tag, inSection: 0)], withRowAnimation: .Automatic);
     }
 }

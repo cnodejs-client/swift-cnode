@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		247765471CC36E1B007295EA /* ContentWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247765461CC36E1B007295EA /* ContentWebViewDelegate.swift */; };
+		24D890B31CC5CD9600676246 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D890B21CC5CD9600676246 /* CommentCell.swift */; };
 		7B0424DC1CAAB94C0039CE81 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0424DB1CAAB94C0039CE81 /* Util.swift */; };
 		7B423C521CA7B85500626945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B423C511CA7B85500626945 /* AppDelegate.swift */; };
 		7B423C541CA7B85500626945 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B423C531CA7B85500626945 /* MainViewController.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		247765461CC36E1B007295EA /* ContentWebViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentWebViewDelegate.swift; sourceTree = "<group>"; };
+		24D890B21CC5CD9600676246 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		2A294CDEDF16141F526AD410 /* Pods_swift_cnode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_cnode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0424DB1CAAB94C0039CE81 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7B423C4E1CA7B85500626945 /* CNode社区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CNode社区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 		7B423C811CA7B8B400626945 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				24D890B21CC5CD9600676246 /* CommentCell.swift */,
 				7B423C5A1CA7B85500626945 /* LaunchScreen.storyboard */,
 				7B423C551CA7B85500626945 /* Main.storyboard */,
 			);
@@ -413,6 +416,7 @@
 				7BB148411CB15CCB008322C6 /* TopicViewController.swift in Sources */,
 				7B0424DC1CAAB94C0039CE81 /* Util.swift in Sources */,
 				247765471CC36E1B007295EA /* ContentWebViewDelegate.swift in Sources */,
+				24D890B31CC5CD9600676246 /* CommentCell.swift in Sources */,
 				7B8559E41CB55218002E132A /* CommentListViewController.swift in Sources */,
 				7B99C3871CA7DEA6006A05ED /* Comment.swift in Sources */,
 				7BB396641CB0BB8A00A242E8 /* Error.swift in Sources */,
