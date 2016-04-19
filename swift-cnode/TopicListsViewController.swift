@@ -45,11 +45,11 @@ class TopicListsViewController: UITableViewController {
         let isTop = Bool(topic.top)
         let tab = isTop ? "置顶" : Tab(tab: topic.tab).rawValue
         
-        avatar.kf_setImageWithURL(NSURL(string: topic.author.avatar_url)!)
+        avatar.kf_setImageWithURL(NSURL(string: topic.author!.avatar_url!)!)
         avatar.layer.masksToBounds = true
         avatar.layer.cornerRadius = 5
         title.text = topic.title
-        subtitle.text = tab + " • " + topic.author.loginname + " • " + Util.fromNow(topic.last_reply_at)
+        subtitle.text = tab + " • " + topic.author!.loginname! + " • " + Util.fromNow(topic.last_reply_at!)
         
         return cell
     }

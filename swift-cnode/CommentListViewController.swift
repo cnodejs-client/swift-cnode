@@ -44,7 +44,7 @@ class CommentListViewController: UITableViewController, UIWebViewDelegate {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return topic?.replies?.count ?? 0
+        return topic?.replies.count ?? 0
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -54,19 +54,19 @@ class CommentListViewController: UITableViewController, UIWebViewDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("commentCell")! as! CommentCell
         
-        if topic?.replies == nil || (topic?.replies!.isEmpty)! {
+        if topic?.replies == nil || (topic?.replies.isEmpty)! {
             return cell
         }
 
-        let comments = Array(topic!.replies!.reverse())
+        let comments = Array(topic!.replies.reverse())
         let comment = comments[indexPath.row]
 
-        cell.avatarImageView.kf_setImageWithURL(NSURL(string: comment.author.avatar_url)!)
+        cell.avatarImageView.kf_setImageWithURL(NSURL(string: comment.author!.avatar_url!)!)
         cell.layer.masksToBounds = true
         cell.layer.cornerRadius = 5
 
-        cell.authorLabel.text = comment.author.loginname
-        cell.timeLabel.text = Util.fromNow(comment.create_at)
+        cell.authorLabel.text = comment.author!.loginname
+        cell.timeLabel.text = Util.fromNow(comment.create_at!)
 
         cell.contentWebView.delegate = self
         cell.contentWebView.tag = indexPath.row
@@ -76,7 +76,7 @@ class CommentListViewController: UITableViewController, UIWebViewDelegate {
         cell.contentWebView.scrollView.scrollEnabled = false
         cell.contentWebView.scrollView.bounces = false
 
-        cell.contentWebView.loadHTMLString(wrapContent(comment.content), baseURL: API.BASE_URL)
+        cell.contentWebView.loadHTMLString(wrapContent(comment.content!), baseURL: API.BASE_URL)
         cell.contentWebView.scrollView.delegate = self
 
         return cell

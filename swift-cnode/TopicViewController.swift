@@ -26,17 +26,17 @@ class TopicViewController: UIViewController, UIScrollViewDelegate {
         contentWebView.delegate = webViewDelegate
 
         topicTitle.text = topic.title
-        avatar.kf_setImageWithURL(NSURL(string: topic.author.avatar_url)!)
+        avatar.kf_setImageWithURL(NSURL(string: topic.author!.avatar_url!)!)
         avatar.layer.masksToBounds = true
         avatar.layer.cornerRadius = 5
-        username.text = topic.author.loginname
-        created.text = Tab(tab: topic.tab).rawValue + " • " + String(topic.visit_count) + "浏览 • " + String(topic.reply_count) + "回复 • " +  Util.fromNow(topic.last_reply_at)
+        username.text = topic.author!.loginname
+        created.text = Tab(tab: topic.tab).rawValue + " • " + String(topic.visit_count) + "浏览 • " + String(topic.reply_count) + "回复 • " +  Util.fromNow(topic.last_reply_at!)
         
         contentWebView.backgroundColor = UIColor.clearColor()
         contentWebView.opaque = false
         contentWebView.scrollView.showsVerticalScrollIndicator = false
         contentWebView.scrollView.bounces = false
-        contentWebView.loadHTMLString(wrapContent(topic.content), baseURL: API.BASE_URL)
+        contentWebView.loadHTMLString(wrapContent(topic.content!), baseURL: API.BASE_URL)
         contentWebView.scrollView.delegate = self
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "message.png"), style: .Plain, target: self, action: #selector(TopicViewController.show))

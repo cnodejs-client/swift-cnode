@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		247765471CC36E1B007295EA /* ContentWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247765461CC36E1B007295EA /* ContentWebViewDelegate.swift */; };
 		24D890B31CC5CD9600676246 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D890B21CC5CD9600676246 /* CommentCell.swift */; };
+		24D890BA1CC65AA900676246 /* PPJSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D890B91CC65AA900676246 /* PPJSONSerialization.swift */; };
+		24D890BD1CC68A7900676246 /* NSDate+PPCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D890BC1CC68A7900676246 /* NSDate+PPCoding.swift */; };
 		7B0424DC1CAAB94C0039CE81 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0424DB1CAAB94C0039CE81 /* Util.swift */; };
 		7B423C521CA7B85500626945 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B423C511CA7B85500626945 /* AppDelegate.swift */; };
 		7B423C541CA7B85500626945 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B423C531CA7B85500626945 /* MainViewController.swift */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		247765461CC36E1B007295EA /* ContentWebViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentWebViewDelegate.swift; sourceTree = "<group>"; };
 		24D890B21CC5CD9600676246 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		24D890B91CC65AA900676246 /* PPJSONSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPJSONSerialization.swift; sourceTree = "<group>"; };
+		24D890BC1CC68A7900676246 /* NSDate+PPCoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+PPCoding.swift"; sourceTree = "<group>"; };
 		2A294CDEDF16141F526AD410 /* Pods_swift_cnode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_cnode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B0424DB1CAAB94C0039CE81 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		7B423C4E1CA7B85500626945 /* CNode社区.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CNode社区.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +117,14 @@
 			name = delegates;
 			sourceTree = "<group>";
 		};
+		24D890B81CC65A6200676246 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				24D890B91CC65AA900676246 /* PPJSONSerialization.swift */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
 		31D5BC99FDBDC1C4DACECADB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +167,7 @@
 		7B423C501CA7B85500626945 /* swift-cnode */ = {
 			isa = PBXGroup;
 			children = (
+				24D890B81CC65A6200676246 /* libs */,
 				7B423C821CA7B8BD00626945 /* models */,
 				7B423C811CA7B8B400626945 /* views */,
 				7B423C801CA7B8AD00626945 /* services */,
@@ -224,6 +237,7 @@
 				7B99C3841CA7DBF1006A05ED /* Author.swift */,
 				7B99C3861CA7DEA6006A05ED /* Comment.swift */,
 				7BB396631CB0BB8A00A242E8 /* Error.swift */,
+				24D890BC1CC68A7900676246 /* NSDate+PPCoding.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -422,7 +436,9 @@
 				7BB396641CB0BB8A00A242E8 /* Error.swift in Sources */,
 				7BCFF0401CA96610006BE71F /* TopicListsViewController.swift in Sources */,
 				7B99C3811CA7D613006A05ED /* Topic.swift in Sources */,
+				24D890BD1CC68A7900676246 /* NSDate+PPCoding.swift in Sources */,
 				7B423C521CA7B85500626945 /* AppDelegate.swift in Sources */,
+				24D890BA1CC65AA900676246 /* PPJSONSerialization.swift in Sources */,
 				7B99C3851CA7DBF1006A05ED /* Author.swift in Sources */,
 				7B99C3831CA7DB55006A05ED /* Tab.swift in Sources */,
 				7B48FFE41CA923BB00F6C4F8 /* API.swift in Sources */,
@@ -570,6 +586,7 @@
 			baseConfigurationReference = C63C3AF6B03E95765F454A97 /* Pods-swift-cnode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "swift-cnode/Info.plist";
@@ -578,6 +595,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "nswbmw.swift-cnode";
 				PRODUCT_NAME = "CNode社区";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -586,6 +604,7 @@
 			baseConfigurationReference = C9524A7042C955F622383FDC /* Pods-swift-cnode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "swift-cnode/Info.plist";

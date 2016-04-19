@@ -33,10 +33,10 @@ class API {
             }
             let json = JSON(response.result.value!)
             let data = json["data"]
-            
+
             var topics = [Topic]()
             for (_, topic) in data {
-                topics.append(Topic(topic))
+                topics.append(Topic(JSONString: topic.rawString()!)!)
             }
             success(topics)
         }
@@ -50,8 +50,9 @@ class API {
                 return
             }
             let json = JSON(response.result.value!)
-            let data = Topic(json["data"])
-            success(data)
+            //print(json)
+            let data = Topic(JSONString: json["data"].rawString()!)
+            success(data!)
         }
     }
     //

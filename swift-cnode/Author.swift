@@ -6,14 +6,13 @@
 //  Copyright © 2016年 nswbmw. All rights reserved.
 //
 
-import SwiftyJSON
+import Foundation
 
-struct Author {
-    let loginname: String!
-    let avatar_url: String!
-
-    init(_ author: JSON) {
-        self.loginname = author["loginname"].string
-        self.avatar_url = author["avatar_url"].string
-    }
+class Author : PPJSONSerialization {
+    var loginname: String?
+    var avatar_url: String?
+    var githubUsername: String?
+    var create_at: NSDate?
+    var recent_topics: [Topic] = []
+    var recent_replies: [Comment] = []
 }

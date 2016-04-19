@@ -15,15 +15,11 @@ class Util {
     static let ONE_DAY = 24 * ONE_HOUR
     static let ONE_MONTH = 30 * ONE_DAY
 
-    class func fromNow(date: String) -> String {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale.currentLocale()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        let newDate = dateFormatter.dateFromString(date)
-        
-        let passed = abs(Double(newDate!.timeIntervalSinceNow))
+    class func fromNow(date: NSDate) -> String {
+        let passed = abs(date.timeIntervalSinceNow)
+
         if passed > ONE_MONTH {
-            return newDate!.toString(DATE_TIME_FMT)!
+            return date.toString(DATE_TIME_FMT)!
         } else if passed > ONE_DAY {
             return String(Int(passed / ONE_DAY)) + "天前"
         } else if passed > ONE_HOUR {

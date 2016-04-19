@@ -6,29 +6,13 @@
 //  Copyright © 2016年 nswbmw. All rights reserved.
 //
 
-import SwiftyJSON
+import Foundation
 
-struct Comment {
-    let id: String!
-    let author: Author!
-    let content: String!
-    let ups: [String]!
-    let create_at: String!
-    let reply_id: String?
-
-    init(_ comment: JSON) {
-        self.id = comment["id"].string
-        self.author = Author(comment["author"])
-        self.content = comment["content"].string
-        
-        var _ups = [String]()
-        for var uid in comment["ups"].arrayValue {
-            _ups.append(uid.string!)
-        }
-        self.ups = _ups
-
-        
-        self.create_at = comment["create_at"].string
-        self.reply_id = comment["reply_id"].string
-    }
+class Comment : PPJSONSerialization {
+    var id: String?
+    var author: Author?
+    var content: String?
+    var ups: [String] = []
+    var create_at: NSDate?
+    var reply_id: String?
 }
