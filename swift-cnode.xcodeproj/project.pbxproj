@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2467B9681CC7D206002A0E29 /* AuthorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467B9671CC7D206002A0E29 /* AuthorCell.swift */; };
+		2467B96A1CC7D22A002A0E29 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467B9691CC7D22A002A0E29 /* TopicCell.swift */; };
+		2467B96C1CC7D3A8002A0E29 /* AuthorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2467B96B1CC7D3A8002A0E29 /* AuthorViewController.swift */; };
 		247765471CC36E1B007295EA /* ContentWebViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247765461CC36E1B007295EA /* ContentWebViewDelegate.swift */; };
 		24D890B31CC5CD9600676246 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D890B21CC5CD9600676246 /* CommentCell.swift */; };
 		24D890BA1CC65AA900676246 /* PPJSONSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D890B91CC65AA900676246 /* PPJSONSerialization.swift */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2467B9671CC7D206002A0E29 /* AuthorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorCell.swift; sourceTree = "<group>"; };
+		2467B9691CC7D22A002A0E29 /* TopicCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		2467B96B1CC7D3A8002A0E29 /* AuthorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorViewController.swift; sourceTree = "<group>"; };
 		247765461CC36E1B007295EA /* ContentWebViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentWebViewDelegate.swift; sourceTree = "<group>"; };
 		24D890B21CC5CD9600676246 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		24D890B91CC65AA900676246 /* PPJSONSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPJSONSerialization.swift; sourceTree = "<group>"; };
@@ -205,6 +211,7 @@
 				7BCFF03F1CA96610006BE71F /* TopicListsViewController.swift */,
 				7BB148401CB15CCB008322C6 /* TopicViewController.swift */,
 				7B8559E31CB55218002E132A /* CommentListViewController.swift */,
+				2467B96B1CC7D3A8002A0E29 /* AuthorViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -225,6 +232,8 @@
 				24D890B21CC5CD9600676246 /* CommentCell.swift */,
 				7B423C5A1CA7B85500626945 /* LaunchScreen.storyboard */,
 				7B423C551CA7B85500626945 /* Main.storyboard */,
+				2467B9671CC7D206002A0E29 /* AuthorCell.swift */,
+				2467B9691CC7D22A002A0E29 /* TopicCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -436,7 +445,10 @@
 				7BB396641CB0BB8A00A242E8 /* Error.swift in Sources */,
 				7BCFF0401CA96610006BE71F /* TopicListsViewController.swift in Sources */,
 				7B99C3811CA7D613006A05ED /* Topic.swift in Sources */,
+				2467B96C1CC7D3A8002A0E29 /* AuthorViewController.swift in Sources */,
+				2467B96A1CC7D22A002A0E29 /* TopicCell.swift in Sources */,
 				24D890BD1CC68A7900676246 /* NSDate+PPCoding.swift in Sources */,
+				2467B9681CC7D206002A0E29 /* AuthorCell.swift in Sources */,
 				7B423C521CA7B85500626945 /* AppDelegate.swift in Sources */,
 				24D890BA1CC65AA900676246 /* PPJSONSerialization.swift in Sources */,
 				7B99C3851CA7DBF1006A05ED /* Author.swift in Sources */,

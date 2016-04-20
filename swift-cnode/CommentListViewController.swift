@@ -62,8 +62,8 @@ class CommentListViewController: UITableViewController, UIWebViewDelegate {
         let comment = comments[indexPath.row]
 
         cell.avatarImageView.kf_setImageWithURL(NSURL(string: comment.author!.avatar_url!)!)
-        cell.layer.masksToBounds = true
-        cell.layer.cornerRadius = 5
+        cell.avatarImageView.layer.masksToBounds = true
+        cell.avatarImageView.layer.cornerRadius = 5
 
         cell.authorLabel.text = comment.author!.loginname
         cell.timeLabel.text = Util.fromNow(comment.create_at!)

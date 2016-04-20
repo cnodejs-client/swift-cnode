@@ -50,11 +50,22 @@ class API {
                 return
             }
             let json = JSON(response.result.value!)
-            //print(json)
             let data = Topic(JSONString: json["data"].rawString()!)
             success(data!)
         }
     }
+
+    static func getUser(loginname: String, error: (String) -> Void, success: Author -> Void) {
+        Alamofire.request(.GET, API.USER_URL + "/" + loginname).responseJSON { response in
+            if response.result.isFailure {
+                error(Error.NetError.rawValue)
+                return
+            }
+            let jsonStr = JSON(response.result.value!)["data"].rawString()!
+            success(Author(JSONString: jsonStr)!)
+        }
+    }
+
     //
     //    // 新建主题
     //    static func createTopic(token: String, title: String, tab: String, content: String, error: (String) -> Void, success: () -> ()) {

@@ -14,5 +14,5 @@ class Author : PPJSONSerialization {
     var githubUsername: String?
     var create_at: NSDate?
     var recent_topics: [Topic] = []
-    var recent_replies: [Comment] = []
+    var recent_replies: [Topic] = []
 }

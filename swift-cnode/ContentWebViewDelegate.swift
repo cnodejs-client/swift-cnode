@@ -22,9 +22,15 @@ class ContentWebViewDelegate: NSObject, UIWebViewDelegate {
         }
 
         let urlStr = request.URLString
-        let topicUrlPrefix = "https://cnodejs.org/topic/"
+
+        let baseUrlStr = API.BASE_URL.URLString
+        let topicUrlPrefix = baseUrlStr + "topic/"
+        let userUrlPrefix = baseUrlStr + "user/"
+
         let topicUrlRegex = topicUrlPrefix + "[a-z0-9]{24}$"
-        if ((urlStr.rangeOfString(topicUrlRegex, options: .RegularExpressionSearch)) != nil) {
+        let userUrlRegex = userUrlPrefix + "[a-zA-Z0-9-]+$"
+
+        if (urlStr.rangeOfString(topicUrlRegex, options: .RegularExpressionSearch) != nil) {
             let topicId = urlStr.substringFromIndex(topicUrlPrefix.endIndex)
 
             API.getTopicDetail(topicId, error: { err in
@@ -33,6 +39,16 @@ class ContentWebViewDelegate: NSObject, UIWebViewDelegate {
                 let topicVC = self.viewController.storyboard?.instantiateViewControllerWithIdentifier("TopicVC") as! TopicViewController
                 topicVC.topic = topic
                 self.viewController.navigationController?.pushViewController(topicVC, animated: true)
+            })
+        } else if (urlStr.rangeOfString(userUrlRegex, options: .RegularExpressionSearch) != nil) {
+            let loginname = urlStr.substringFromIndex(userUrlPrefix.endIndex)
+
+            API.getUser(loginname, error: { err in
+                showToast(err)
+            }, success: { author in
+                let authorVC = self.viewController.storyboard?.instantiateViewControllerWithIdentifier("AuthorVC") as! AuthorViewController
+                authorVC.author = author
+                self.viewController.navigationController?.pushViewController(authorVC, animated: true)
             })
         } else {
             let safariVC = SFSafariViewController(URL: request.URL!)
