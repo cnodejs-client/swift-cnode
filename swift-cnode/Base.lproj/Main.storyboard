@@ -22,36 +22,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="置顶 • nswbmw • 12分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-QQ-Iyi">
-                                            <rect key="frame" x="75" y="38" width="474" height="15"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这是标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4WX-8T-pay">
-                                            <rect key="frame" x="75" y="8" width="474" height="20"/>
+                                            <rect key="frame" x="75" y="13" width="474" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="qLZ-BK-joq">
-                                            <rect key="frame" x="16" y="8" width="48" height="48"/>
+                                            <rect key="frame" x="14" y="11" width="48" height="48"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="48" id="281-1e-Zv8"/>
                                                 <constraint firstAttribute="height" constant="48" id="8fE-he-5L7"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="置顶 • nswbmw • 12分钟前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds6-QQ-Iyi">
+                                            <rect key="frame" x="75" y="41" width="474" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="4WX-8T-pay" secondAttribute="trailing" constant="10" id="B1V-f8-NzJ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="ds6-QQ-Iyi" secondAttribute="trailing" constant="10" id="BAC-t5-VAN"/>
-                                        <constraint firstItem="qLZ-BK-joq" firstAttribute="top" secondItem="AKa-C9-4V8" secondAttribute="topMargin" id="E0W-dR-U0Z"/>
-                                        <constraint firstItem="qLZ-BK-joq" firstAttribute="leading" secondItem="AKa-C9-4V8" secondAttribute="leadingMargin" constant="8" id="SKr-QP-0VV"/>
-                                        <constraint firstItem="4WX-8T-pay" firstAttribute="leading" secondItem="qLZ-BK-joq" secondAttribute="trailing" constant="11" id="m9S-Yt-Uib"/>
-                                        <constraint firstItem="ds6-QQ-Iyi" firstAttribute="leading" secondItem="qLZ-BK-joq" secondAttribute="trailing" constant="11" id="oFE-SU-aYf"/>
-                                        <constraint firstItem="ds6-QQ-Iyi" firstAttribute="top" secondItem="4WX-8T-pay" secondAttribute="bottom" constant="10" id="w79-PU-1jP"/>
-                                        <constraint firstItem="4WX-8T-pay" firstAttribute="top" secondItem="AKa-C9-4V8" secondAttribute="topMargin" id="x8w-XZ-k36"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="4WX-8T-pay" secondAttribute="trailing" constant="10" id="Aow-Ss-3no"/>
+                                        <constraint firstItem="ds6-QQ-Iyi" firstAttribute="leading" secondItem="qLZ-BK-joq" secondAttribute="trailing" constant="13" id="HWF-qF-DVm"/>
+                                        <constraint firstItem="4WX-8T-pay" firstAttribute="top" secondItem="AKa-C9-4V8" secondAttribute="topMargin" constant="5" id="OfK-HL-B1V"/>
+                                        <constraint firstItem="qLZ-BK-joq" firstAttribute="leading" secondItem="AKa-C9-4V8" secondAttribute="leadingMargin" constant="6" id="VJ5-YF-eqt"/>
+                                        <constraint firstItem="4WX-8T-pay" firstAttribute="leading" secondItem="qLZ-BK-joq" secondAttribute="trailing" constant="13" id="bOy-6c-58c"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ds6-QQ-Iyi" secondAttribute="trailing" constant="10" id="fn1-lR-8AZ"/>
+                                        <constraint firstItem="qLZ-BK-joq" firstAttribute="top" secondItem="AKa-C9-4V8" secondAttribute="topMargin" constant="3" id="iO2-oZ-aLw"/>
+                                        <constraint firstItem="ds6-QQ-Iyi" firstAttribute="top" secondItem="4WX-8T-pay" secondAttribute="bottom" constant="8" id="raR-kx-1qW"/>
+                                        <constraint firstItem="qLZ-BK-joq" firstAttribute="leading" secondItem="AKa-C9-4V8" secondAttribute="leadingMargin" constant="6" id="tw2-31-nJW"/>
+                                        <constraint firstItem="qLZ-BK-joq" firstAttribute="top" secondItem="AKa-C9-4V8" secondAttribute="topMargin" constant="3" id="urw-Bb-nsK"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="VJ5-YF-eqt"/>
+                                            <exclude reference="iO2-oZ-aLw"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="kxZ-Nn-ShW" kind="show" id="9hs-8R-Vrb"/>
